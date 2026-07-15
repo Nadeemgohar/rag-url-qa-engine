@@ -165,7 +165,11 @@ st.markdown(
 # Utilities
 # -------------------------
 def fetch_url_text(url: str, max_chars: int = 200_000) -> Tuple[str, str]:
-    headers = {"User-Agent": "RAG-Streamlit-App/1.0"}
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+    }
     resp = requests.get(url, headers=headers, timeout=20)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
