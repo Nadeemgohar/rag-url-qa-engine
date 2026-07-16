@@ -290,7 +290,7 @@ def retrieve_relevant_chunks(collection, query_embedding: List[float], url: str,
 def genai_generate(client: genai.Client, prompt: str, model: str = GEN_MODEL) -> str:
     config = types.GenerateContentConfig(
         temperature=0.0,
-        max_output_tokens=800
+        max_output_tokens=2048
     )
     resp = client.models.generate_content(model=model, contents=prompt, config=config)
     return resp.text
