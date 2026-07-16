@@ -42,7 +42,7 @@ CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
 TOP_K = 4
 EMBEDDING_MODEL = "gemini-embedding-001"   # gemini embedding model
-GEN_MODEL = "gemini-flash-latest"             # generation model          # generation model
+GEN_MODEL = "gemini-flash-latest"         # auto-tracks Google's current stable Flash model
 
 # -------------------------
 # UI styling
@@ -165,11 +165,7 @@ st.markdown(
 # Utilities
 # -------------------------
 def fetch_url_text(url: str, max_chars: int = 200_000) -> Tuple[str, str]:
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-    }
+    headers = {"User-Agent": "RAG-Streamlit-App/1.0"}
     resp = requests.get(url, headers=headers, timeout=20)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
@@ -267,11 +263,16 @@ def upsert_page_to_chroma(collection, url: str, title: str, chunks: List[str], e
     # Ensure embeddings is a list of lists of floats
     collection.add(ids=ids, documents=documents, metadatas=metadatas, embeddings=embeddings)
 
-def retrieve_relevant_chunks(collection, query_embedding: List[float], top_k: int = TOP_K):
+def retrieve_relevant_chunks(collection, query_embedding: List[float], url: str, top_k: int = TOP_K):
     if not query_embedding:
         return []
     
-    results = collection.query(query_embeddings=[query_embedding], n_results=top_k, include=["documents", "metadatas", "distances"])
+    results = collection.query(
+        query_embeddings=[query_embedding],
+        n_results=top_k,
+        where={"url": url},
+        include=["documents", "metadatas", "distances"],
+    )
     
     if not results["documents"]:
         return []
@@ -390,7 +391,7 @@ if answer_btn:
         with st.spinner("Thinking..."):
             try:
                 q_emb = embed_single(genai_client, user_question, model=EMBEDDING_MODEL)
-                hits = retrieve_relevant_chunks(collection, q_emb, top_k=TOP_K)
+                hits = retrieve_relevant_chunks(collection, q_emb, url=url_input, top_k=TOP_K)
             except Exception as e:
                 st.error(f"Retrieval error: {e}")
                 hits = []
@@ -411,4 +412,3 @@ if answer_btn:
                     st.write(answer_text)
                 except Exception as e:
                     st.error(f"Generation error: {e}")
- 
