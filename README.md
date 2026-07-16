@@ -5,12 +5,12 @@ An **AI-powered web application** built with **Streamlit** that fetches content 
 ---
 
 ## 🚀 Demo
-🔗 [Live App on Streamlit](https://app-rag-genai-project-007.streamlit.app/)
+🔗 [(https://activity-cowljgbrhajxltzpba6qmq.streamlit.app/)](https://activity-cowljgbrhajxltzpba6qmq.streamlit.app/)
 
 ---
+## screenshots
+<img width="1837" height="890" alt="Screenshot from 2026-07-16 16-26-09" src="https://github.com/user-attachments/assets/0853ee79-55db-4c0f-8449-5aee929f885c" />
 
-## 🚀 Video Demo
-[qa-rag-genai-demo.webm](https://github.com/user-attachments/assets/fe6264a6-b46c-4925-bdbd-8b427926062e)
 
 ---
 
@@ -70,11 +70,12 @@ An **AI-powered web application** built with **Streamlit** that fetches content 
 
 ---
 
-## 👨‍💻 Author
-**Mirza Yasir Abdullah Baig**  
-🌐 [Kaggle](https://www.kaggle.com/mirzayasirabdullah07/)) 
-💼 [LinkedIn](https://www.linkedin.com/in/mirza-yasir-abdullah-baig/)  
-💻 [GitHub](https://github.com/mirzayasirabdullahbaig07)
+## 👨‍💻 Author  
+**Nadeem Gohar**  
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/nadeem-gohar-0708382b0/)
+- 💻 [GitHub](https://github.com/Nadeemgohar)  
+
 
 ---
 
