@@ -332,7 +332,7 @@ st.markdown(
             <h1>🧠 RAG URL Q&A</h1>
             <div class="byline">Built by Nadeem Gohar · retrieval-augmented Q&A over any web page</div>
         </div>
-        <div class="badge">Gemini + ChromaDB</div>
+        <div class="badge">Gemini</div>
     </div>
     """,
     unsafe_allow_html=True,
