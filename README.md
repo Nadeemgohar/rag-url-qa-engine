@@ -1,4 +1,4 @@
-# 🎗️ QA-RAG-GenAi Project
+#  🎗️ QA-RAG-GenAi Project
 
 An **AI-powered web application** built with **Streamlit** that fetches content from websites and answers questions based on that content using Google GenAI and ChromaDB.
 
