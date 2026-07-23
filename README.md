@@ -53,23 +53,6 @@ An **AI-powered web application** built with **Streamlit** that fetches content 
 - **NumPy & Pandas** – Data processing
 - **pysqlite3-binary** – Streamlit Cloud SQLite compatibility
 
----
-
-## 📸 Screenshots
-### 🏠 Home Page
-![Home Page](images/home_page.png)  <!-- Add your screenshot -->
-<img width="1863" height="806" alt="image" src="https://github.com/user-attachments/assets/614fd1f9-0dc5-49c2-9bef-babf0e8e7fa4" />
-
-
-### ✅ Answer Result
-![Answer Result](images/answer_result.png)  <!-- Add your screenshot -->
-<img width="1854" height="764" alt="image" src="https://github.com/user-attachments/assets/aa398165-5a93-4883-8ea8-c4bbe259e0b1" />
-
-### ✅ Answer Result
-<img width="1883" height="814" alt="image" src="https://github.com/user-attachments/assets/b40042d5-3df6-401f-bc18-6417cbf85586" />
-
----
-
 ## 👨‍💻 Author  
 **Nadeem Gohar**  
 
